@@ -1,0 +1,85 @@
+{
+  "experiment": {
+    "experiment_name": "test_exp_003",
+    "scene_info": [
+      {
+        "scene_name": "正常",
+        "allocation_ratio": 1,
+        "layer_info": [
+          {
+            "layer_name": "算法",
+            "layer_diversion_strategy": {
+              "diversion_strategy_name": "layer_001策略",
+              "diversions": {
+                "diversions_priority": [
+                  1,
+                  2
+                ],
+                "diversion_type": [
+                  1,
+                  2
+                ],
+                "white_list_info": [
+                  {
+                    "white_list_type_name": "bucket_001_白名单_002",
+                    "white_list_bucket_info": {
+                      "bucket_name": "bucket_white_list",
+                      "bucket_param": {
+                        "param_A": "分词",
+                        "param_B": "解析",
+                        "param_C": "画像"
+                      }
+                    },
+                    "white_list": [
+                      "007",
+                      "001",
+                      "abc"
+                    ]
+                  }
+                ]
+              }
+            },
+            "bucket_info": [
+              {
+                "bucket_name": "bucket_white_list",
+                "bucket_param": {
+                  "param_A": "分词",
+                  "param_B": "解析",
+                  "param_C": "画像"
+                }
+              },
+              {
+                "bucket_name": "test_bucket_001",
+                "bucket_param": {
+                  "param_D": "数据",
+                  "param_E": "研发",
+                  "param_F": "测试"
+                }
+              },
+              {
+                "bucket_name": "test_bucket_002",
+                "bucket_param": {
+                  "param_H": "数据",
+                  "param_I": "研发",
+                  "param_J": "测试"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exp_diversion_strategy": {
+      "diversion_strategy_name": "experiment_001策略",
+      "diversions": {
+        "diversions_priority": [
+          1
+        ],
+        "diversion_type": [
+          2
+        ],
+        "white_list_info": []
+      }
+    }
+  }
+}

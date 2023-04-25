@@ -1,0 +1,83 @@
+{
+    "experiment": {
+        "experiment_name": "test_exp_003",  # 实验名
+        "scene_info": [  # 场景配置，可配置多个
+            {
+                "scene_name": "正常",  # 场景名称
+                "layer_info": [  # 流量层配置， 可配置多个
+                    {
+                        "layer_name": "算法",  # 流量层名称
+                        "layer_diversion_strategy": {  # 流量层策略
+                            "diversion_strategy_name": "layer_001策略",  # 流量层分流策略名
+                            "diversions": {  # 流量层分流信息，包括分流器配置，白名单信息
+                                "diversions_priority": [  # 分流器优先级 1 > 2
+                                    1,
+                                    2
+                                ],
+                                "diversion_type": [  # 分流器id，目前支持两个， 1: 白名单分流器；2: 用户信息分流
+                                    1,
+                                    2
+                                ],
+                                "white_list_info": [  # 白名单信息，可为空
+                                    {
+                                        "white_list_type_name": "bucket_001_白名单_002",  # 白名单类型名
+                                        "white_list_bucket_info": {  # 白名单bucket信息
+                                            "bucket_name": "bucket_white_list",  # bucket名称
+                                            "bucket_param": {  # bucket参数
+                                                "param_A": "分词",
+                                                "param_B": "解析",
+                                                "param_C": "画像"
+                                            }
+                                        },
+                                        "white_list": [  # 白名单用户
+                                            "007",
+                                            "001",
+                                            "abc"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "bucket_info": [  # 非白名单bucket信息， 可配置多个
+                            {
+                                "bucket_name": "bucket_white_list",  # 非白名单bucket名称
+                                "bucket_param": {  # 非白名单bucket参数
+                                    "param_A": "分词",
+                                    "param_B": "解析",
+                                    "param_C": "画像"
+                                }
+                            },
+                            {
+                                "bucket_name": "test_bucket_001",
+                                "bucket_param": {
+                                    "param_D": "数据",
+                                    "param_E": "研发",
+                                    "param_F": "测试"
+                                }
+                            },
+                            {
+                                "bucket_name": "test_bucket_002",
+                                "bucket_param": {
+                                    "param_H": "数据",
+                                    "param_I": "研发",
+                                    "param_J": "测试"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "exp_diversion_strategy": {  # 实验策略配置
+            "diversion_strategy_name": "experiment_001策略",  # 实验策略名称
+            "diversions": {  # 流量层分流信息，包括分流器配置，白名单信息
+                "diversions_priority": [  # 分流器优先级
+                    1
+                ],
+                "diversion_type": [  # 分流器id，目前场景分流配置支持用户信息分流， 1: 白名单分流器；2: 用户信息分流
+                    2
+                ]
+            }
+        }
+    }
+}
